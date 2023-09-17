@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .generate-btn {
+      position: fixed;  /* Change this from relative to fixed */
+      top: 10px;
+      background-color: #4285f4;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition-duration: 0.4s;
+    }
+
+    .generate-btn:hover {
+      background-color: white; 
+      color: #4285f4;
+      border: 2px solid #4285f4;
+    }
+
+    #word-search-grid span.selected {
+      background-color: rgba(0, 0, 255, 0.3); /* Semi-transparent blue */
+      border-radius: 50%; /* Circular highlight */
+    }
+
+    #word-search-grid span {
+      /* Your existing styles... */
+      width: 30px; /* Increase the size of the cells */
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px; /* Increase the size of the letters */
+      text-align: center; /* Center the letters within the cells */
+      transition: all 0.2s ease-in-out;
+    }
+
+    #word-search-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: row; /* Change this from column to row */
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+    }
+
+    #word-search-grid, #word-list {
+      margin: 0 20px; /* Add some margin between the grid and the word list */
+    }
+    
+    /* Add this new CSS for the word list */
+    #word-list {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    #word-list li {
+      margin-bottom: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <button class="generate-btn" onclick="generateGrid(); displayWords()">Generate Word Search</button>
+  <div id="word-search-grid"></div>
+  <ul id="word-list"></ul> <!-- Move this above the button and grid -->
+  
+  <script src="main3.js"></script>
+</body>
+</html>
